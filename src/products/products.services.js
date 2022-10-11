@@ -94,7 +94,12 @@ const patchFullProduct = (req, res) => {
                 res.status(400).json({message: err.message})
             })
     } else {
-        res.status(404).json({message: "Missing data"})
+        res.status(404).json({message: "Missing data", field: {
+            name: "string",
+            category: "string",
+            price: "integer",
+            isAviable: "boolean"
+        }})
     }
 }
 
